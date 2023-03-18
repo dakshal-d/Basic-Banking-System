@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    font-family: "Ubuntu";
+    
+
+}
+
+/* content */
+
+.my-info {
+    padding: 3rem 3rem;
+    margin: 1rem;
+    background: linear-gradient(to right bottom, rgb(62, 219, 236), rgb(191, 192, 228));
+}
+
+.btn-info {
+    font-size: 1.8rem;
+    background-color: #03036a!important;
+    color: white!important;
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
+    padding: 0.75rem;
+    transition: all 0.3s;
+}
+
+.btn-info:hover {
+    background-color: white!important;
+    color: #39398f!important;
+}
+
+/* pop-up */
+
+.modal-header button ,.modal-body span , input::placeholder , .modal-footer button {
+    font-size: 1.8rem;
+}
+
+#enterName , #enterAmount {
+    font-size: 1.8rem;
+}
+
+.modal-content .modal-footer .btn {
+    margin: 0.2rem;
+}
+
+.modal-footer button {
+    background-color: #1b1bd5!important;
+    color: white!important;
+}
+
+.modal-footer button:hover {
+    background-color: white!important;
+    color: #1b1bd5!important;
+}
+
+.modal-header h2 {
+    color: #1b1bd5!important;
+}
+
+.form-control {
+    background-image: linear-gradient(0deg,#1b1bd5 2px,rgba(0,150,136,0) 0),linear-gradient(0deg,rgba(0,0,0,.26) 1px,transparent 0);
+}
+
+/* customers */
+
+.container {
+    align-content: center;
+    max-width: 100rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10%;
+}
+
+
+.container h4 {
+    color: #3e894e;
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
+
+}
+
+
+.table-header,.table-row {
+    border-radius: 0.3rem;
+    padding: 1.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.table-header {
+    background-color: #4040ce;
+    color: whitesmoke;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.table-row {
+    background-color: #dffcff;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.1);
+}
+
+.col-1 {
+    flex-basis: 15%;
+}
+
+.col-2 {
+    flex-basis: 15%;
+}
+
+.col-3 {
+    flex-basis: 15%;
+}
+
+.col-4 {
+    flex-basis: 15%;
+}
+
+.col-5 {
+    flex-basis: 15%;
+}
+
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: #3c35b9;
+}
+
+.bottom-container {
+    text-align: center;
+    background-color: #66BFBF;
+    padding: 30px 20px;
+  }

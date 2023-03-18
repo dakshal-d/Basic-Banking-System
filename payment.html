@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/payment.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="icon" href="images/bank1.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Banking System</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="images/bank.png" style="width: 50px;height: 50px;">TSF Bank</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="./index.html"><button type="button" class="btn btn-dark">Home</button></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./about.html"><button type="button" class="btn btn-dark">About</button></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./payment.html"><button type="button" class="btn btn-dark">Tranfer Money</button></a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <style> h4{text-align: center;} 
+        body {
+            background-color: #EDF1D6;
+            background-image: url("images/VPb29a.jpg");
+            font-family: "Ubuntu";
+                }
+    </style>
+    <section>
+        <div class="my-info text-center title">
+            <h1>Account Holder Name : Dakshal </h1>
+            <h2>Net Bank Balance : <span id="myAccountBalance">880000</span> ₹</h2>
+            <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Transfer Money</button>
+            <button class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory">Show All Transactions</button>
+        </div>
+
+        <!-- Send Money pop-up -->
+        <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="exampleModalLabel">Send Money</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form autocomplete="off" action="">
+                            <div class="input-group mb-3">
+                                <input type="text" id="enterName" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append" >
+                                    <span class="input-group-text" id="basic-addon2"></span>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">₹</span>
+                                </div>
+                                <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount" aria-label="Amount">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send Money</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transaction History pop-up -->
+        <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="exampleModalLabel">Transaction History</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol id="transaction-history-body">
+        
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- All customers -->
+        <div class="container">
+            <h4>ALL ACCOUNNT HOLDERS</h4>
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-1">No.</div>
+                    <div class="col col-2">Name</div>
+                    <div class="col col-3">Email</div>
+                    <div class="col col-4">Amount(Rs.)</div>
+                    <div class="col col-5">Payment</div>
+                
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">1</div>
+                    <div class="col col-2" data-label="Name">Rahul</div>
+                    <div class="col col-3" data-label="Email">Rahul@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="RahulBankBalance">55000</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+                
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">2</div>
+                    <div class="col col-2" data-label="Name">Sam</div>
+                    <div class="col col-3" data-label="Email">Sam@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="SamBankBalance">80500</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+                
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">3</div>
+                    <div class="col col-2" data-label="Name">Bruce</div>
+                    <div class="col col-3" data-label="Email">Bruce@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="BruceBankBalance">75500</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+                   
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">4</div>
+                    <div class="col col-2" data-label="Name">Tony</div>
+                    <div class="col col-3" data-label="Email"><a id="name">Tony</a>@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="TonyBankBalance">440000</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+                
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">5</div>
+                    <div class="col col-2" data-label="Name">Steve</div>
+                    <div class="col col-3" data-label="Email"><a id="name">Steve</a>@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="SteveBankBalance">65200</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+                 
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">6</div>
+                    <div class="col col-2" data-label="Name">Raj</div>
+                    <div class="col col-3" data-label="Email"><a id="name">Raj</a>@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="KapoorBankBalance">75900</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+            
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">7</div>
+                    <div class="col col-2" data-label="Name">Patel</div>
+                    <div class="col col-3" data-label="Email"><a id="name">Patel</a>@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="PatelBankBalance">98600</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+             
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">8</div>
+                    <div class="col col-2" data-label="Name">Shah</div>
+                    <div class="col col-3" data-label="Email"><a id="name">Shah</a>@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="ShahBankBalance">53000</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+                
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">9</div>
+                    <div class="col col-2" data-label="Name">Jeff</div>
+                    <div class="col col-3" data-label="Email"><a id="name">Jeff</a>@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="JeffBankBalance">50500</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+        
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="No.">10</div>
+                    <div class="col col-2" data-label="Name">Ratan</div>
+                    <div class="col col-3" data-label="Email"><a id="name">Ratan</a>@gmail.com</div>
+                    <div class="col col-4" data-label="Amount"><a id="RatanBankBalance">84900</a> ₹</div>
+                    <div class="col col-5" data-label="Payment"><a class="button" href="./payment.html">Transfer Money</a></div>
+              
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="bottom-container">
+    
+        <h5>Internship Project - Dakshal Dalsania <br>@The Sparks Foundatiion</h5> 
+        <br>
+        <h5>Contact Me</h5>
+        <a class="footer-link" href=""><img src="images/linkedin.png" style="width:40px;height:40px;" ></a>
+        <a class="footer-link" href="mailto:dakshaldalsania59@gmail.com"><img src="images/email.png" style="width:40px;height:40px;"></a>
+        <a class="footer-link" href=""><img src="images/github.png" style="width:40px;height:40px;" ></a>
+      </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+</body>
+</html>

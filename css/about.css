@@ -1,0 +1,25 @@
+h1{
+    color: #73738e;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+}
+
+.box {
+    margin-bottom: 2.3rem;
+    background-color: whitesmoke;
+}
+
+.bottom-container {
+    text-align: center;
+    background-color: #66BFBF;
+    padding: 30px 20px;
+  }
